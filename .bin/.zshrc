@@ -1,4 +1,21 @@
-PROMPT="%S%F{92}(%n)%s%S%f%F{135}%~%f%s%S%f%F{147}hoge%f%s "
+function left-prompt {
+  name_text='179m%}'
+  name_background='000m%}'
+  path_text='255m%}'
+  path_background='031m%}'
+  arrow='087m%}'
+  text_color='%{\e[38;5;'
+  back_color='%{\e[30;48;5;'
+  reset='%{\e[0m%}'
+  sharp="\uE0B0"
+
+  user="${back_color}${name_background}${text_color}${name_text}"
+  dir="${back_color}${path_background}${text_color}${path_text}"
+  echo "${user}%n(っ´ω\`c)♡${back_color}${path_background}${text_color}${name_background}${sharp} ${dir}%~${reset}${text_color}${path_background}${sharp}${reset}\n${text_color}${arrow}> ${reset}"
+}
+
+
+PROMPT=`left-prompt`
 RPROMPT="%T"
 
 # zinitの設定
