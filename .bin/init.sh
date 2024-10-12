@@ -27,3 +27,9 @@ else
   fi
 fi
 
+# create github directory
+if [ -d /Users/$(whoami)/develop/repositories ]; then
+  echo "github directory is already created"
+else
+  mkdir -p /Users/$(whoami)/develop/repositories
+fi
