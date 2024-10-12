@@ -1,3 +1,6 @@
 brew "git"
 brew "tree"
 brew "wget"
+brew "go"
+brew "peco"
+brew "ghq"
