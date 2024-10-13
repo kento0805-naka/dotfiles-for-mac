@@ -14,9 +14,43 @@ function left-prompt {
   echo "${user}%n(っ´ω\`c)♡${back_color}${path_background}${text_color}${name_background}${sharp} ${dir}%~${reset}${text_color}${path_background}${sharp}${reset}\n${text_color}${arrow}> ${reset}"
 }
 
+function git-current-branch {
+  branch='\ue0a0'
+  green='%{\e[38;5;114m%}'
+  red='%{\e[38;5;001m%}'
+  yellow='%{\e[38;5;227m%}'
+  blue='%{\e[38;5;033m%}'
+  reset='%{\e[0m%}'
 
-PROMPT=`left-prompt`
-RPROMPT="%T"
+  if ! git rev-parse 2> /dev/null; then
+    return
+  fi
+
+  branch_name=`git rev-parse --abbrev-ref HEAD 2> /dev/null`
+  st=`git status 2> /dev/null`
+
+  if [[ -n `echo "$st" | grep "^nothing to"` ]]; then
+    branch_status="${green}${branch}"
+  elif [[ -n `echo "$st" | grep "^Untracked files"` ]]; then
+    branch_status="${red}${branch}?"
+  elif [[ -n `echo "$st" | grep "^Changes not staged for commit"` ]]; then
+    branch_status="${red}${branch}+"
+  elif [[ -n `echo "$st" | grep "^Changes to be committed"` ]]; then
+    branch_status="${yellow}${branch}!"
+  elif [[ -n `echo "$st" | grep "^rebase in progress"` ]]; then
+    echo "${red}${branch}!(no branch)${reset}"
+    return
+  else
+    branch_status="${blue}${branch}"
+  fi
+
+  echo "${branch_status}${branch_name}${reset}"
+}
+
+setopt prompt_subst
+
+PROMPT='$(left-prompt)'
+RPROMPT='$(git-current-branch)'
 
 # zinitの設定
 ZINIT_HOME="${XDG_DATA_HOME:-${HOME}/.local/share}/zinit/zinit.git"
