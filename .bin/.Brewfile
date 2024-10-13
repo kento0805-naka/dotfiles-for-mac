@@ -1,3 +1,5 @@
+cask_args appdir: "/Applications"
+
 brew "git"
 brew "curl"
 brew "tree"
@@ -12,3 +14,5 @@ brew "grep"
 brew "vim"
 brew "awscli"
 brew "asdf"
+
+cask "clipy"
