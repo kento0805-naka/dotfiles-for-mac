@@ -1,5 +1,7 @@
 cask_args appdir: "/Applications"
 
+tap "cjbassi/ytop"
+
 brew "git"
 brew "curl"
 brew "tree"
@@ -14,5 +16,8 @@ brew "grep"
 brew "vim"
 brew "awscli"
 brew "asdf"
+brew "ytop"
+brew "jq"
 
 cask "clipy"
+cask "orbstack"
