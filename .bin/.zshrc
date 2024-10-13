@@ -126,3 +126,4 @@ alias grep='ggrep'
 alias find='gfind'
 alias dirname='gdirname'
 alias xargs='gxargs'
+. /opt/homebrew/opt/asdf/libexec/asdf.sh
