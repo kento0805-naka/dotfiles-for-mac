@@ -18,6 +18,7 @@ brew "awscli"
 brew "asdf"
 brew "ytop"
 brew "jq"
+brew "docker"
 
 cask "clipy"
 cask "orbstack"
