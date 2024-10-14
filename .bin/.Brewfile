@@ -22,3 +22,4 @@ brew "docker"
 
 cask "clipy"
 cask "orbstack"
+cask "postman"
