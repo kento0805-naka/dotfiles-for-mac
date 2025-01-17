@@ -126,4 +126,7 @@ alias grep='ggrep'
 alias find='gfind'
 alias dirname='gdirname'
 alias xargs='gxargs'
+
+# kubernetes
+alias k='kubectl'
 . /opt/homebrew/opt/asdf/libexec/asdf.sh

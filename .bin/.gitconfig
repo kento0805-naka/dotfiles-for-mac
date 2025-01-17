@@ -3,3 +3,5 @@
   name = "kento0805-naka"
 [ghq]
 	root = ~/develop/repositories
+[init]
+	defaultBranch = main
