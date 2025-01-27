@@ -97,6 +97,9 @@ export GOPATH=$HOME/go
 export PATH=$PATH:$GOPATH/bin
 
 # alias
+alias ..='cd ..'
+alias ...='cd ../..'
+alias ....='cd ../../..'
 alias ll='ls -l'
 alias la='ls -la'
 alias gaa='git add --all'
